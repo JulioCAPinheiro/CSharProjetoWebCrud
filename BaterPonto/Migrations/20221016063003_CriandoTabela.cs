@@ -4,6 +4,7 @@
 
 namespace BaterPonto.Migrations
 {
+    //Aqui e onde utilizamos o Entity Framework que cria nossa tabela a partir de Contexto
     public partial class CriandoTabela : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)

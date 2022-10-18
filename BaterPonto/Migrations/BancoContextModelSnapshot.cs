@@ -9,6 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BaterPonto.Migrations
 {
+    //Aqui e onde utilizamos o Entity Framework que cria nossa tabela a partir de Contexto
+
     [DbContext(typeof(BancoContext))]
     partial class BancoContextModelSnapshot : ModelSnapshot
     {

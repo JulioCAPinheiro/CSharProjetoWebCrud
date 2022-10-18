@@ -5,6 +5,7 @@ namespace BaterPonto.DB
 {
     public class BancoContext : DbContext
     {
+        //Aqui representamos o Banco de dados que rememos criar
         public BancoContext(DbContextOptions <BancoContext> options) : base(options)
         {
             

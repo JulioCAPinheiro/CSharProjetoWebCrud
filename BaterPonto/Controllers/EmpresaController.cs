@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BaterPonto.Controllers
 {
+    // O controlador como o próprio nome diz é: A parte de controle do software a ser criado, onde ela recebe as requisição e envia as respostas
+    //Aqui chamamos as nossas respostas de View e Metodos
     public class EmpresaController : Controller
     {
         private readonly IEmpresaRepositorio _empresaRepositorio;

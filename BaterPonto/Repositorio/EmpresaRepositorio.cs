@@ -3,6 +3,8 @@ using BaterPonto.Models;
 
 namespace BaterPonto.Repositorio
 {
+    //Dentro da pasta EmpresaRepositorio criamos chamos os metodos criados na Função IEmpresaRepositorio gerando uma dependencia
+    //E implementando as suas regras
     public class EmpresaRepositorio : IEmpresaRepositorio
     {
         private readonly BancoContext _bancoContext;

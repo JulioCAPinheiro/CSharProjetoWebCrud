@@ -1,4 +1,6 @@
-﻿@model EmpresModel
+﻿<!-- Utilizamos O Empresa Model para que possamos utilizar o Razor nos códigos HTML -->
+
+@model EmpresModel
 
 @{
     ViewData["Title"] = "Apagar Contato";
@@ -8,7 +10,8 @@
 <div class="text-center">
     <h3>Desejar apagar o contato (@Model.Name)?</h3>
 </div>
-
+<!--Aqui Criamos os botões para poder fazer o funcionamento do Delete do Crud, ele segue a forma de Pedir Requisição pelo "Asp-Controller e a 
+ sua ação que será puxado. " -->
 
 <a class="btn btn-primary d-block" role="button" asp-controller="Empresa" asp-action="Index">Cancelar exclusão</a>
 <a class="btn btn-danger d-block" role="button" asp-controller="Empresa" asp-action="Apagar" asp-route-id="@Model.Id">Confirma exclusão</a>

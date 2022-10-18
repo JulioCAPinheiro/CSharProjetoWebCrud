@@ -2,6 +2,8 @@
 {
     public class EmpresModel
     {
+
+        //Aqui Criamos a nossa Entidade que será utiliza para termos base do nosso Crud
         public int Id { get; set; }
 
         public string Name { get; set; }
