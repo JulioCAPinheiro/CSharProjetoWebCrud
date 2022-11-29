@@ -9,8 +9,6 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BaterPonto.Migrations
 {
-    //Aqui e onde utilizamos o Entity Framework que cria nossa tabela a partir de Contexto
-
     [DbContext(typeof(BancoContext))]
     partial class BancoContextModelSnapshot : ModelSnapshot
     {
@@ -45,6 +43,10 @@ namespace BaterPonto.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SenhaEmpresa")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

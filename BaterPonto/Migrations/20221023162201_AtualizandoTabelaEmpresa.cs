@@ -4,8 +4,7 @@
 
 namespace BaterPonto.Migrations
 {
-    //Aqui e onde utilizamos o Entity Framework que cria nossa tabela a partir de Contexto
-    public partial class CriandoTabela : Migration
+    public partial class AtualizandoTabelaEmpresa : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -18,6 +17,7 @@ namespace BaterPonto.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CNPJ = table.Column<int>(type: "int", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SenhaEmpresa = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Celular = table.Column<int>(type: "int", nullable: false),
                     InscriEstadual = table.Column<int>(type: "int", nullable: false)
                 },

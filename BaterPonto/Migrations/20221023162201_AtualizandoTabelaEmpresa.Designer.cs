@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BaterPonto.Migrations
 {
     [DbContext(typeof(BancoContext))]
-    [Migration("20221016063003_CriandoTabela")]
-    partial class CriandoTabela
+    [Migration("20221023162201_AtualizandoTabelaEmpresa")]
+    partial class AtualizandoTabelaEmpresa
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -45,6 +45,10 @@ namespace BaterPonto.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SenhaEmpresa")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

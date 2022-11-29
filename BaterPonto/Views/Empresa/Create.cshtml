@@ -16,33 +16,63 @@
 
     <div class="mb-">
         <label for="nome">Nome</label>
-        <input type="text" asp-for="Name" class="form-control" placeholder="Digite o nome do Empresa">
+        <input type="text" asp-for="Name" class="form-control" placeholder="Digite o nome da empresa" id="Name">
     </div>
+
     <div class="mb-3">
         <label for="Cnpj">CNPJ</label>
-        <input type="text" asp-for="CNPJ" class="form-control" placeholder="Digite o CNPJ da empresa">
+        <input type="text" asp-for="CNPJ" class="form-control" placeholder="Digite o CNPJ da empresa" onblur="checkCNPJ(this.value)" id="cnpj" data-mask="00.000.000/0000-00">
     </div>
 
     <div class="mb-3">
         <label for="email">E-mail</label>
-        <input type="text" asp-for="Email" class="form-control" placeholder="Digite o E-mail do contato">
+        <input type="text" asp-for="Email" class="form-control" placeholder="Digite o E-mail do Empresa" id="Email">
+    </div>
+
+    <div class="mb-3">
+        <label for="senha">Senha</label>
+        <input type="password" asp-for="SenhaEmpresa" class="form-control" placeholder="Digite a Senha da Empresa" id="senhaEmpresa">
     </div>
 
     <div class="mb-3">
         <label for="Celular">Celular</label>
-        <input type="text" asp-for="Celular" class="form-control" placeholder="Digite o número do contato">
+        <input type="text" asp-for="Celular" class="form-control" placeholder="Digite o número da Empresa" id="telefone" data-mask= "(00) 0000-0000">
     </div>
 
     <div class="mb-3">
         <label for="InscricaoEstudal">Inscrição Estadual</label>
-        <input type="text" asp-for="InscriEstadual" class="form-control" placeholder="Digite a Inscrição Estadual">
+        <input type="text" asp-for="InscriEstadual" class="form-control" placeholder="Digite a Inscrição Estadual" id="inscriEstadual">
     </div>
 
     <!--Aqui criamos o botção de confirmação de cadastro ou volta para desistir do cadastro-->
     <button type="submit" class="btn btn-primary ">Add Contato</button>
     <a class="btn btn-secondary " asp-controller="Empresa" asp-action="Index" role="button">Voltar</a>
-
 </form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+
+<script>
+    function checkCNPJ(Cnpj) 
+    {
+       $.ajax({
+        'url': 'https://receitaws.com.br/v1/cnpj/' + Cnpj.replace(/[^0-9]/g, ''),
+        'type': "GET",
+        'dataType': 'jsonp',
+        'success': function(data) {
+            if (data.nome == undefined) {
+                alert(data.status + ' ' + data.message)
+            } else {
+                document.getElementById('Name').value = data.nome;
+                document.getElementById('Email').value = data.email;
+                document.getElementById('telefone').value = data.telefone;
+            }
+            console.log(data);
+        }
+       })
+
+    }
+</script>
 
 
 

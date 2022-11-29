@@ -3,7 +3,8 @@
 @{
     ViewData["Title"] = "Listagem de Empresas";
 }
-<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
+
+
 
 <div class="text-center">
 
@@ -22,6 +23,7 @@
                 <th scope="col">Nome</th>
                 <th scope="col">CNPJ</th>
                 <th scope="col">Email</th>
+                <th scope="col">Senha</th>
                 <th scope="col">Celular</th>
                 <th scope="col">Inscrição Estadual</th>
                 <th scope="col"></th>
@@ -38,6 +40,7 @@
                         <td>@Empresa.Name</td>
                         <td>@Empresa.CNPJ</td>
                         <td>@Empresa.Email</td>
+                        <td>@Empresa.SenhaEmpresa</td>
                         <td>@Empresa.Celular</td>
                         <td>@Empresa.InscriEstadual</td>
                         <td>

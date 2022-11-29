@@ -19,6 +19,8 @@ namespace BaterPonto.Controllers
             return View(empresa);
         }
 
+        
+
         public IActionResult Create()
         {
             return View();
@@ -46,8 +48,10 @@ namespace BaterPonto.Controllers
         [HttpPost]
         public IActionResult Create(EmpresModel Empresa)
         {
-            _empresaRepositorio.Adicioar(Empresa);
-            return RedirectToAction("Index");
+            
+                _empresaRepositorio.Adicioar(Empresa);
+                return RedirectToAction("Index");           
+
         }
 
         [HttpPost]

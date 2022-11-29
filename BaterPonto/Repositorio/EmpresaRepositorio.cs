@@ -37,6 +37,7 @@ namespace BaterPonto.Repositorio
             EmpresaDb.Name = Empresa.Name;
             EmpresaDb.CNPJ = Empresa.CNPJ;
             EmpresaDb.Email = Empresa.Email;
+            EmpresaDb.SenhaEmpresa = Empresa.SenhaEmpresa;
             EmpresaDb.Celular = Empresa.Celular;
             EmpresaDb.InscriEstadual = Empresa.InscriEstadual;
 
